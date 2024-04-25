@@ -1,0 +1,19 @@
+name: CI/CD for Cypress project
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:  
+  Run-Cypress-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+
+      - name: Run Cypress Test
+        uses: cypress-io/github-action@v4
